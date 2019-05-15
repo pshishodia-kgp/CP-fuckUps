@@ -12,3 +12,18 @@ Note : Use brackets around bitwise operators.
 4. To convert number into string use `int x = 5; string s = to_string(x);`
 
 5. To convert number into binary string use, `int x = 5; string s = bitset<3>(5).to_string();`, i.e, `bitset<Max_bits> (num).to_string()`
+
+6. To check equality of two vectors, 
+
+```
+bool check = true; 
+if(a.size() != b.size())check = false;
+for(int i=0;i<a.size();++i)if(a[i] != b[i])check = false;
+```
+
+is wrong, because if sizes are different it will give runtime error. Simplest way is
+
+```
+if(a == b)cout<<"Same\n"; 
+else cout<<"Not Same\n"; 
+```
