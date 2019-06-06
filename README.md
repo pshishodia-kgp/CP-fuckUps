@@ -27,3 +27,10 @@ is wrong, because if sizes are different it will give runtime error. Simplest wa
 if(a == b)cout<<"Same\n"; 
 else cout<<"Not Same\n"; 
 ```
+
+7. 
+```
+int res[2][2], temp[2][2]; 
+res = temp; 
+```
+Equating two 2d arrays works weirdly, maybe passes the address. 
