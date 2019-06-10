@@ -34,3 +34,5 @@ int res[2][2], temp[2][2];
 res = temp; 
 ```
 Equating two 2d arrays works weirdly, maybe passes the address. 
+
+8. a^b + c is a^(b + c)
