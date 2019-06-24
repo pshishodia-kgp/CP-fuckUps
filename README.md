@@ -36,3 +36,16 @@ res = temp;
 Equating two 2d arrays works weirdly, maybe passes the address. 
 
 8. a^b + c is a^(b + c)
+
+9. Do add operations before remove in MO's algorithm, because otherwise it may lead to seg-fault, if you're trying to delete elements from some container. For example you start from (l, r) = (0, -1) and (curr_l, curr_r) = (3, 3). Then doing, 
+
+```
+while(l < curr_l)remove(a[l++]); 
+```
+will lead to seg fault. Right way : 
+```
+        while(l > curr_l)add(a[--l]); 
+        while(r < curr_r)add(a[++r]); 
+        while(l < curr_l)remove(a[l++]); 
+        while(r > curr_r)remove(a[r--]); 
+```
