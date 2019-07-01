@@ -49,3 +49,15 @@ will lead to seg fault. Right way :
         while(l < curr_l)remove(a[l++]); 
         while(r > curr_r)remove(a[r--]); 
 ```
+
+10. Wrong Knapsack 
+```
+        for(int i=0;i<n;++i)
+                for(int j=0;j<=sum; ++j)dp[j + a[i]] |= dp[j]
+```
+Right knapsack 
+```
+        for(int i=0;i<n;++i)
+                for(int j = sum; j >= 0; --j)dp[j + a[i]] |= dp[j]; 
+```
+Because in first case, dp[j] may alter dp[j + a[i]] which may alter dp[j+ 2a[i]] which is wrong..
