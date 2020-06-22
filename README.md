@@ -63,3 +63,6 @@ Right knapsack
 Because in first case, dp[j] may alter dp[j + a[i]] which may alter dp[j+ 2a[i]] which is wrong..
 
 11. s is a string, then `s.erase(id)` doesn't remove the character at position id but all the characters following position id. Correct syntax is `s.erase(id, len)` , where len is the number of characters to be deleted (starting at id). 
+
+12. `prefix[i] = prefix[i - 1] + (condition)? 1 : 0;` doesn't work while
+`prefix[i] = prefix[i - 1] + (condition? 1 : 0)` works. because the former translates to `(prefix[i - 1] + condition)?` because of higher priority of `?` over `+`
