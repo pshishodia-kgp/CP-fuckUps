@@ -66,3 +66,5 @@ Because in first case, dp[j] may alter dp[j + a[i]] which may alter dp[j+ 2a[i]]
 
 12. `prefix[i] = prefix[i - 1] + (condition)? 1 : 0;` doesn't work while
 `prefix[i] = prefix[i - 1] + (condition? 1 : 0)` works. because the former translates to `(prefix[i - 1] + condition)?` because of higher priority of `?` over `+`
+
+13. Segmentation fault may really fuck up with the variables are correctly printed. ![Accepted](https://codeforces.com/contest/1468/submission/102453022), ![WA](https://codeforces.com/contest/1468/submission/102451332)
